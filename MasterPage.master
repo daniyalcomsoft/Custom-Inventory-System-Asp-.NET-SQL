@@ -1,0 +1,317 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui" />
+
+    <title>Accounts Expert - Accounting Solution</title>
+
+         <link rel="shortcut icon" href="App_Images/favicon.png" />   
+    <script type="text/javascript">
+       
+        let webTheme = '<%= webTheme %>';
+        </script>
+     
+    <!-- Stylesheets -->
+    <%--<link rel="stylesheet" href="aspnet_client/system_web/2_0_50727/CrystalReportWebFormViewer4/css/default.css" />--%>
+
+    <link rel="stylesheet" href="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/css/bootstrap.min09a2.css?v2.1.0" />
+    <link rel="stylesheet" href="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/css/bootstrap-extend.min09a2.css?v2.1.0" />
+    <link rel="stylesheet" href="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/assets/css/site.min09a2.css?v2.1.0" />
+    <link href="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/css/Custom.css" rel="stylesheet" />
+    <link href="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/css/jquery.toast.css" rel="stylesheet" />
+    <link href="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/css/jquery.toast.min.css" rel="stylesheet" />
+    <link href="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/css/validation.css" rel="stylesheet" />
+     <link href="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/css/jquery-ui.css" rel="stylesheet" />
+     <link href="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/css/bootstrap-select.min.css" rel="stylesheet" />
+    <!-- Skin tools -->
+         <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/vendor/jquery/jquery.min.js"></script>
+
+    <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/js/analytics.js"></script>
+        
+        <link rel="stylesheet" href="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/css/skintools.min09a2.css?v2.1.0" />
+
+    <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/assets/js/sections/skintools.min.js"></script>
+    <!-- Plugins -->
+    <link rel="stylesheet" href="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/vendor/animsition/animsition.min09a2.css?v2.1.0" />
+    <link rel="stylesheet" href="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/vendor/asscrollable/asScrollable.min09a2.css?v2.1.0" />
+    <link rel="stylesheet" href="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/vendor/switchery/switchery.min09a2.css?v2.1.0" />
+    <link rel="stylesheet" href="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/vendor/intro-js/introjs.min09a2.css?v2.1.0" />
+    <link rel="stylesheet" href="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/vendor/slidepanel/slidePanel.min09a2.css?v2.1.0" />
+    <link rel="stylesheet" href="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/vendor/flag-icon-css/flag-icon.min09a2.css?v2.1.0" />
+    <link rel="stylesheet" href="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/vendor/waves/waves.min09a2.css?v2.1.0" />
+
+    <!-- Page -->
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/fonts/material-design/material-design.min09a2.css?v2.1.0" />
+    <link rel="stylesheet" href="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/fonts/brand-icons/brand-icons.min09a2.css?v2.1.0" />
+    <link rel="stylesheet" href="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/fonts/material-design/material-design.min.css?v2.1.0" />
+    <link rel="stylesheet" href="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/fonts/brand-icons/brand-icons.min.css?v2.1.0" />
+
+      <link rel="stylesheet" href="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/css/googlefontcss.css" />
+   
+    <link rel="stylesheet" href="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/fonts/font-awesome/font-awesome.min.css?v2.1.0" />
+      <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/js/slimScroll/jquery.slimscroll.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/js/slimScroll/prettify/prettify.js"></script>
+
+
+    <!-- Scripts -->
+     <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/js/DynamicMenu.js"></script>
+    <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/vendor/modernizr/modernizr.min.js"></script>
+    <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/vendor/breakpoints/breakpoints.min.js"></script>
+   <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/js/jquery-1.10.2.js"></script>
+    <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/js/jquery-ui.js"></script>
+         <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/js/bootstrap-select.min.js"></script>
+     <script type="text/javascript">
+         Breakpoints();
+       
+
+         $(document).ready(function () {
+             $("input").attr("autocomplete", "new-password");
+                JSON_Menu();
+                DateTimePicker();
+              
+            });
+
+         function autocom() {
+             $("input").attr("autocomplete", "new-password");
+         }
+         function runScript(e) {
+             if (e.keyCode == 13) {
+                 return false;
+
+             }
+         }
+  </script>
+  
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="dashboard">
+    <form runat="server">
+        <cc1:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+        </cc1:ToolkitScriptManager>
+       
+        <nav class="site-navbar navbar navbar-default navbar-inverse navbar-fixed-top navbar-mega"
+            role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle hamburger hamburger-close navbar-toggle-left unfolded hided" data-toggle="menubar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="hamburger-bar"></span>
+                </button>
+                <button type="button" class="navbar-toggle collapsed" data-target="#site-navbar-collapse" data-toggle="collapse">
+                    <i class="icon md-more" aria-hidden="true"></i>
+                </button>
+                <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
+                   
+                     <asp:Image runat="server" ID="imgwhtlogo" class="navbar-brand-logo" style=" height: 42px !important; margin-top: -10px;" />
+                  
+                   
+                </div>
+            </div>
+
+            <div class="navbar-container container-fluid">
+                <!-- Navbar Collapse -->
+                <div class="collapse navbar-collapse navbar-collapse-toolbar" id="site-navbar-collapse">
+                    <!-- Navbar Toolbar -->
+                    <ul class="nav navbar-toolbar">
+                        <li class="hidden-float" id="toggleMenubar">
+                            <a data-toggle="menubar" href="#" role="button">
+                                <i class="icon hamburger hamburger-arrow-left">
+                                    <span class="sr-only">Toggle menubar</span>
+                                    <span class="hamburger-bar"></span>
+                                </i>
+                            </a>
+                        </li>
+                        <li class="hidden-xs" id="toggleFullscreen">
+                            <a class="icon icon-fullscreen" data-toggle="fullscreen" href="#" role="button">
+                                <span class="sr-only">Toggle fullscreen</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- End Navbar Toolbar -->
+                     <ul class="nav navbar-toolbar comname">
+                         <span id="spcname" runat="server"></span>
+                        
+                             <div class="col-md-4 " style="margin-left: 15px;">
+                             
+                          <asp:DropDownList runat="server" OnSelectedIndexChanged="cmbFinYear_SelectedIndexChanged" AutoPostBack="true" ID="cmbFinYear"  data-live-search="true"  CssClass="form-control"  width="100%" />
+                    <asp:Label ForeColor="White" runat="server" ID="SyncTime"></asp:Label>
+                   
+                        </div>
+                       
+                     </ul>
+                    <!-- Navbar Toolbar Right -->
+                    <ul class="nav navbar-toolbar navbar-right navbar-toolbar-right">
+                        <li class="dropdown">
+                            <a class="navbar-avatar dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false"
+                                data-animation="scale-up" role="button">
+                                <span class="avatar avatar-online">
+                                    <img src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Images/default_user_icon.png" alt="..." />
+                                    <i></i>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                               
+                                <li role="presentation">
+                                   <a data-toggle="modal" data-target="#ModalChangePassword" href="" role="menuitem"><i class="icon md-lock" aria-hidden="true"></i>Change Password</a>
+                                </li>
+                                <li class="divider" role="presentation"></li>
+                                <li role="presentation">
+                                      <asp:LinkButton runat="server" OnClick="btnlogout_Click" ID="btnlogout" CssClass="" role="menuitem"><i class="icon md-power" aria-hidden="true"></i>Logout</asp:LinkButton>
+                                    <%--<a href="<%= ConfigurationManager.AppSettings["webroot"] %>Login.aspx" role="menuitem"><i class="icon md-power" aria-hidden="true"></i>Logout</a>--%>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- End Navbar Toolbar Right -->
+                </div>
+                <!-- End Navbar Collapse -->
+            </div>
+        </nav>
+         <asp:HiddenField runat="server" ID="hdnMenuLink" />
+        <asp:HiddenField runat="server" ID="hdnMenu" />
+          <asp:HiddenField runat="server" ID="hdnSubMenu" />
+          <asp:HiddenField runat="server" ID="hdnPages" />
+        <div class="site-menubar">
+            <div class="site-menubar-body">
+                <ul class="site-menu" id="MainID">
+                    <li class="site-menu-item active">
+                        <a class="animsition-link" href="<%= ConfigurationManager.AppSettings["webroot"] %>Default.aspx">
+                            <i class="site-menu-icon icon fa-desktop" aria-hidden="true"></i>
+                            <span class="site-menu-title">Dashboard</span>
+                        </a>
+                    </li>
+                    
+           
+                </ul>
+            </div>
+        </div>
+        <!-- Page -->
+        <div class="page animsition">
+            <div class="page-content padding-30 container-fluid">
+                 <div id="StausMsg">
+                     </div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    
+                </asp:ContentPlaceHolder>
+            </div>
+
+        </div>
+        <!-- End Page -->
+        <!-- Footer -->
+        <footer class="site-footer">
+            <div class="site-footer-legal">Powered by <a target="_blank" href="http://webtechsolution.com.pk/">Webtech Solutions Pvt Ltd.</a></div>
+           
+           
+        </footer>
+        <!-- End Footer -->
+
+        <!-- Core  -->
+
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/vendor/bootstrap/bootstrap.min.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/vendor/animsition/animsition.min.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/vendor/asscroll/jquery-asScroll.min.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/vendor/mousewheel/jquery.mousewheel.min.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/vendor/asscrollable/jquery.asScrollable.all.min.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/vendor/ashoverscroll/jquery-asHoverScroll.min.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/vendor/waves/waves.min.js"></script>
+
+        <!-- Plugins -->
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/vendor/switchery/switchery.min.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/vendor/intro-js/intro.min.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/vendor/screenfull/screenfull.min.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/vendor/slidepanel/jquery-slidePanel.min.js"></script>
+
+        <!-- Scripts -->
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/js/core.min.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/assets/js/site.min.js"></script>
+
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/assets/js/sections/menu.min.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/assets/js/sections/menubar.min.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/assets/js/sections/sidebar.min.js"></script>
+
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/js/configs/config-colors.min.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/assets/js/configs/config-tour.min.js"></script>
+
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/js/components/asscrollable.min.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/js/components/animsition.min.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/js/components/slidepanel.min.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/js/components/switchery.min.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/js/components/tabs.min.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/global/js/components/panel.min.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/assets/js/uikit/panel-actions.min.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/js/CustomFunction.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/js/ShowLoading.min.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/js/jquery.toast.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/js/jquery.toast.min.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/js/Custom_toast.js"></script>
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/js/ScrollableTablePlugin_1.0_min.js"></script>
+        <link href="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/js/slimScroll/prettify/prettify.css" rel="stylesheet" />
+      
+        <script src="<%= ConfigurationManager.AppSettings["webroot"] %>App_Script/js/validation.js"></script>
+
+          <div class="modal fade modal-primary" id="ModalChangePassword" aria-hidden="true"
+        aria-labelledby="ModalItem" data-backdrop="static" data-keyboard="false" role="dialog" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                 <asp:UpdatePanel ID="UpdatePanel2" runat="server"><ContentTemplate>
+                <div class="modal-header">
+                    <h4 class="modal-title">Change Password</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div id="StatusMsgPopup">
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-horizontal" id="ModalChangePassword1">
+                             <div class="form-group">
+                                    <label class="col-sm-3 control-label">Current Password </label>
+                                    <div class="col-sm-9">
+                                         <asp:TextBox runat="server" TextMode="Password" ID="txtCurrentPassword" CssClass="form-control "  Width="100%" placeholder="Current Password"  />
+                                      <asp:RequiredFieldValidator  runat="server" ControlToValidate="txtCurrentPassword"
+                                             ErrorMessage="Required!" Display ="Dynamic" ForeColor="Red"   ValidationGroup="ValidatePass" ></asp:RequiredFieldValidator>
+                                    </div>
+                                </div>
+                                
+                                 <div class="form-group">
+                                    <label class="col-sm-3 control-label">New Password</label>
+                                    <div class="col-sm-9">
+                                         <asp:TextBox runat="server" TextMode="Password" ID="txtNewPassword" CssClass="form-control"  Width="100%" placeholder="New Password"  />
+                                  <asp:RequiredFieldValidator  runat="server" ControlToValidate="txtNewPassword"
+                                             ErrorMessage="Required!" Display ="Dynamic" ForeColor="Red"   ValidationGroup="ValidatePass" ></asp:RequiredFieldValidator>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">Confirm Password</label>
+                                    <div class="col-sm-9">
+                                         <asp:TextBox runat="server" TextMode="Password" ID="txtConfirmPassword" CssClass="form-control "  Width="100%" placeholder="Confirm Password"  />
+                                  <asp:RequiredFieldValidator  runat="server" ControlToValidate="txtConfirmPassword"
+                                             ErrorMessage="Required!" Display ="Dynamic" ForeColor="Red"   ValidationGroup="ValidatePass" ></asp:RequiredFieldValidator>
+                                          <label runat="server" id="lbmsg"    style="color:red"  />
+                                    </div>
+                                </div>
+                                
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                   <asp:Button runat="server" ID="btnSavePassword" OnClick="btnSavePassword_Click" ValidationGroup="ValidatePass" CssClass="btn1 btn-primary waves-effect waves-light"  Text="Change Password" />
+                </div>
+             </ContentTemplate></asp:UpdatePanel>
+            </div>
+        </div>
+    </div>
+
+    </form>
+</body>
+</html>

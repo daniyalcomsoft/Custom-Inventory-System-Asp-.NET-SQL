@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+  <SignedInfo>
+    <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+    <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+    <Reference URI="#License">
+      <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <DigestValue>koMCKPiRl7YbrVVjtgXfnOLnZFQ=</DigestValue>
+    </Reference>
+  </SignedInfo>
+  <SignatureValue>qQz/nk9bbqBh5Hk2/W2u3bV96c032VFNe0qvSvRkv13GMeqZ9kLYmbIzfqsj+51hW4BoLydKC9/jXbYkq6Wy79MJwEgFsyZmRQPQ92+WU2UksK8Kg61CFDiN9b53As1Ag0WMVmrcq8SQEtbB4+rwngBnYBi92NqALxcoSJP/ELg=</SignatureValue>
+  <KeyInfo>
+    <KeyValue xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <RSAKeyValue>
+        <Modulus>wjZ0Eg7qoU6xTuTa7QkfLJ1hHrfw1a5yligPgkmwqIZtrmk12qojnIayLwAthaiEk8APGR83m4q3T99aaZPYZUESbdttBkckdtv42DXb2F2i6WkZ4ecahP4Wl4vwrAKvOPS+kKXak/L+XHekPbjhNqarwLi6KbQNVjCtJvNXHVM=</Modulus>
+        <Exponent>AQAB</Exponent>
+      </RSAKeyValue>
+    </KeyValue>
+  </KeyInfo>
+  <Object Id="License">
+    <License xmlns="">
+      <LoadFactor>58615391E2DF30D3-0CBFA87D2C643228-FFCBE5028E46C0C3</LoadFactor>
+      <ID>56F6EF1DE9E14F0AA0C73DB28452E26C</ID>
+      <LicenseFactor>634029984000000000</LicenseFactor>
+      <Product>VM.xPort.DS2XL, VM.xPort.DS2XL, Version=1.0.0.0, Culture=neutral, PublicKeyToken=a83f0d1a0f55aa06</Product>
+      <Header />
+      <Support>support@xporttools.net</Support>
+      <Web>http://www.xporttools.net</Web>
+      <Vendor>xPortTools Inc.</Vendor>
+      <VendorEmail>support@xporttools.net</VendorEmail>
+      <Copyright>(C) 2008-2009 xPortTools Inc. All rights reserved.</Copyright>
+      <Description />
+    </License>
+  </Object>
+</Signature>

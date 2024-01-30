@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+  <SignedInfo>
+    <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+    <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+    <Reference URI="#License">
+      <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <DigestValue>J/yxmB8r04xCKqfGz1lIDMYtRSA=</DigestValue>
+    </Reference>
+  </SignedInfo>
+  <SignatureValue>CLg/tmPYFLfbfdwylB+vGOdmw7wGA7nciO6sTc57BBEfWtjdJRMXuT/7L2FFO6k1IHlnr0ngG0rxeBea/1i6oM+7vIAJO7VcNyyBJSYl7roxS8Fwf9vO/t7ObLYdygHgW98gRV9yuHPlwyvzwbHD+UgKQV6+vHiY9W98eX2Tkxk=</SignatureValue>
+  <KeyInfo>
+    <KeyValue xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <RSAKeyValue>
+        <Modulus>t4/1CZcFFv4RuYm4dJW2XivAEti/yVuzuMFbWdfQIS1SerHGzoQXlwtbuVlbNxLX/AS6YfU7QLwl9q8WXHvv6w7GQA6f8BmvFeheYDSvGAw7p/bc32z3w5fLObgjiCtmjI3m+u7Mn/FrZtaSlkxgqmtoPOJ+0Q60HGkJfOgEdIs=</Modulus>
+        <Exponent>AQAB</Exponent>
+      </RSAKeyValue>
+    </KeyValue>
+  </KeyInfo>
+  <Object Id="License">
+    <License xmlns="">
+      <LoadFactor>8B2A4F786CA710CD-8BC77F90E60B45C3-BBB7B588ABF6FF5E</LoadFactor>
+      <ID>0B17C2BFE689404084097B2E398396CF</ID>
+      <LicenseFactor>634029984000000000</LicenseFactor>
+      <Product>xPortTools.TxtClient, Version=1.0.0.0, Culture=neutral, PublicKeyToken=00777339a3bec7b1</Product>
+      <Header />
+      <Support>support@xporttools.net</Support>
+      <Web>http://www.xporttools.net</Web>
+      <Vendor>xPortTools Inc.</Vendor>
+      <VendorEmail>support@xporttools.net</VendorEmail>
+      <Copyright>(C) 2008-2009 xPortTools Inc. All rights reserved.</Copyright>
+      <Description />
+    </License>
+  </Object>
+</Signature>

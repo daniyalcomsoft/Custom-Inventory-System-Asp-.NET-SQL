@@ -1,0 +1,143 @@
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="CustomerType.aspx.cs" Inherits="Sales_CustomerType" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <script>
+        $(document).ready(function () {
+            $('#btnAdd').click(function () {
+                $('#ModalCustomerType').find('input,textarea').not(':button,:submit').val('');
+
+            })
+        });
+
+    </script>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+     <asp:UpdatePanel ID="UpdatePanel1" runat="server"><ContentTemplate>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                Sys.WebForms.PageRequestManager.getInstance().add_endRequest(EndRequestHandler);
+                function EndRequestHandler(sender, args) {
+                    $('#btnAdd').click(function () {
+                        $('#ModalCustomerType').find('input,select,textarea').not(':button,:submit').val('');
+
+                    });
+
+                }
+            });
+            </script>
+          <div class="panel panel-bordered panel-primary">
+                <div class="panel-heading form-group">
+                    <h3 class="panel-title">Customer Type List</h3>
+                </div>
+
+                <div class="panel-body">
+                     <div class="row">
+                           <div class="col-sm-8 form-group">
+                              <div class="bs-example">
+                                <div class="btn-group">
+                                    <asp:LinkButton runat="server" OnClick="btnSearch_Click" ID="btnSearch" CssClass="btn btn-primary pull-right"><i class='icon fa-search' aria-hidden='true'></i>Search</asp:LinkButton>
+                                </div>
+                                <div class="btn-group">
+                                     <asp:LinkButton runat="server" ID="btnClear" OnClick="btnClear_Click" Text="Clear" CssClass="btn btn-default pull-right"/> 
+                                </div>
+                           </div>
+                           </div>
+                        <div class="col-sm-4 form-group">
+                          <button type="button"  data-toggle="modal" data-target="#ModalCustomerType" class="btn btn-primary pull-right" id="btnAdd">Add CustomerType</button>
+                        </div>
+                    </div>
+                      <div class="GridWrapper table-responsive">
+                                     <asp:GridView runat="server" EmptyDataRowStyle-HorizontalAlign="Center" ShowHeaderWhenEmpty="true" AutoGenerateColumns="False" ID="grd" OnPageIndexChanging="grd_PageIndexChanging" AllowPaging="true" PageSize="10" DataKeyNames="CustomerTypeID" CssClass="table table-striped table-bordered dataTable table-responsive table-hover" >
+                                        <EmptyDataTemplate>
+                                            <h4>No record found</h4>
+                                        </EmptyDataTemplate>
+                                          <Columns>
+                                                  <asp:TemplateField SortExpression="CustomerTypeID" ItemStyle-Width="10%">
+                                    <HeaderTemplate>
+
+                                        <bold>Customer Type #</bold>
+                                        <asp:TextBox runat="server" CssClass="form-control" ID="txtSearchCustomerTypeID" placeholder="Customer Type #"></asp:TextBox>
+
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <%# Eval("CustomerTypeID") %>
+                                    </ItemTemplate>
+                                </asp:TemplateField>  
+                                                <asp:TemplateField SortExpression="CustomerType" ItemStyle-Width="10%">
+                                    <HeaderTemplate>
+
+                                        <bold>CustomerType</bold>
+                                        <asp:TextBox runat="server" CssClass="form-control" ID="txtSearchCustomerType" placeholder="Customer Type"></asp:TextBox>
+
+                                    </HeaderTemplate>
+                                    <ItemTemplate>
+                                        <%# Eval("CustomerType") %>
+                                    </ItemTemplate>
+                                </asp:TemplateField>                                       
+                                            
+                                               <asp:TemplateField ItemStyle-Width="10%"  HeaderText="Action" >
+                                                 <ItemTemplate>
+                                                     <asp:LinkButton runat="server" ToolTip="Edit" OnCommand="btnEdit_Command" CommandArgument='<%# Eval("CustomerTypeID") %>'  ID="btnEdit" >
+                                                         <i class="icon fa-edit icon_custom"  aria-hidden="true"></i>
+                                                     </asp:LinkButton>
+                                                      <asp:LinkButton runat="server" ToolTip="Delete" OnCommand="btnDelete_Command" CommandArgument='<%# Eval("CustomerTypeID") %>'  ID="btnDelete" >
+                                                         <i class="icon fa-trash-o icon_custom"  aria-hidden="true"></i>
+                                                     </asp:LinkButton>
+                                                     </ItemTemplate>
+                                                   </asp:TemplateField>
+                                                
+                                               
+                                         </Columns>
+                                            <PagerStyle CssClass="GridPager" HorizontalAlign="Right" />
+                        <PagerSettings  FirstPageText="First" PageButtonCount="5"  LastPageText="Last" Mode="NumericFirstLast" NextPageText="Next" Position="Bottom" PreviousPageText="Previous" />
+                                     </asp:GridView>
+
+                                </div>
+
+                </div>
+            </div>
+   </ContentTemplate></asp:UpdatePanel>
+ <!-- Modal -->
+    <div class="modal fade modal-primary" id="ModalCustomerType" aria-hidden="true"
+        aria-labelledby="ModalCustomerType" data-backdrop="static" data-keyboard="false" role="dialog" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                 <asp:UpdatePanel ID="UpdatePanel2" runat="server"><ContentTemplate>
+                <div class="modal-header">
+                    <h4 class="modal-title">CustomerType</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div id="StatusMsgPopup">
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-horizontal" id="ModalForm">
+                                 
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label">CustomerType :<span class="required-field">*</span></label>
+                                    <div class="col-sm-7">
+                                          <asp:HiddenField runat="server" ID="hdID" />
+                                       
+                                         <asp:TextBox runat="server" ID="txtCustomerType" CssClass="form-control"  Width="100%" placeholder="CustomerType"  />
+                                          <asp:RequiredFieldValidator  runat="server" ControlToValidate="txtCustomerType"
+                                             ErrorMessage="Required!" Display ="Dynamic" ForeColor="Red"  ValidationGroup="Validate" ></asp:RequiredFieldValidator>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                   <asp:Button runat="server" ID="btnSave" OnClick="btnSave_Click" ValidationGroup="Validate"  CssClass="btn1 btn-primary waves-effect waves-light"  Text="Save" />
+                </div>
+             </ContentTemplate></asp:UpdatePanel>
+            </div>
+        </div>
+    </div>
+             
+    <!-- End Modal -->
+</asp:Content>
+
+
+

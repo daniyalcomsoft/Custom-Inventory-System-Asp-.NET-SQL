@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+  <SignedInfo>
+    <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315" />
+    <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+    <Reference URI="#License">
+      <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <DigestValue>B9BRXVjrU+NzaivgXv0q6oZG0Lk=</DigestValue>
+    </Reference>
+  </SignedInfo>
+  <SignatureValue>JpmCS2Hxvy8HPeo0xa3f7SdY9VOdG9f98MEm5axTVGwfYyhsU5t2a2CnmjELtl/zjnVhbz0TP89UVN0/EZSi1ks+t/LIRRFg/NqHKzN4aV7SN/ehBU1ubsnDlYPAtBe8ociHfniaz6XPmuxqVzyDmgzbCPC8Z2BgY+FKhV4enTk=</SignatureValue>
+  <KeyInfo>
+    <KeyValue xmlns="http://www.w3.org/2000/09/xmldsig#">
+      <RSAKeyValue>
+        <Modulus>rkHWy5soIlKpCuFkqsAQvRCH91QKl/NcvHWiDTyMBy/2RfnC/4tcdAipV9PvZTR5TXOOs85JbM0ZaOB14ZjrrLTueNRbr+Ca5X4/AM/4UGO62RUThxZCkhMyThTTa7MpSr38PVZZ2vS0j01/o8JyGow/QczTu5DYf/GhUQO+Z6U=</Modulus>
+        <Exponent>AQAB</Exponent>
+      </RSAKeyValue>
+    </KeyValue>
+  </KeyInfo>
+  <Object Id="License">
+    <License xmlns="">
+      <LoadFactor>C452738523475CBF-07B0A87F4CF8B50A-7B1A2DCE472156DA</LoadFactor>
+      <ID>8A81C6EA7C4A4A64A2B664395061CD71</ID>
+      <LicenseFactor>634029984000000000</LicenseFactor>
+      <Product>VM.xPort.ExcelClient.ExcelConnection, VM.xPort.ExcelClient, Version=1.0.0.0, Culture=neutral, PublicKeyToken=66f4958a136be4e2</Product>
+      <Header />
+      <Support>support@xporttools.net</Support>
+      <Web>http://www.xporttools.net</Web>
+      <Vendor>xPortTools Inc.</Vendor>
+      <VendorEmail>support@xporttools.net</VendorEmail>
+      <Copyright>(C) 2008-2009 xPortTools Inc. All rights reserved.</Copyright>
+      <Description />
+    </License>
+  </Object>
+</Signature>
